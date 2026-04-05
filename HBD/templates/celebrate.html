@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Celebrate</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="celebrate">
+
+    <div class="glass-card">
+
+        <h1 class="title">🎉 Happy Birthday, {{ name }}! 🎉</h1>
+
+        <img src="{{ url_for('static', filename='images/bear.png') }}" id="bear" class="bear">
+
+        <div class="wishes">
+            <p>Wishing you a year Full of Happiness</p>
+            <p>Have an amazing day filled with joy and discovery! 🎂</p>
+            <p>May u Live Long happily with your Loved ones</p>
+        </div>
+
+        <div class="buttons">
+            <button onclick="launchBalloons()">🎈 Balloons</button>
+            <button onclick="launchConfetti()">🎊 Confetti</button>
+            <button onclick="dance()">🕺 Make Teddy Dance</button>
+        </div>
+
+    </div>
+
+    <div id="balloon-container"></div>
+
+    <footer>
+        Made with ❤️ by Muhammad Abdullah Bhatti
+    </footer>
+
+    <script src="{{ url_for('static', filename='java.js') }}"></script>
+
+</body>
+
+</html>

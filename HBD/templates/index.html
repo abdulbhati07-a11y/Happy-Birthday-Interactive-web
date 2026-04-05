@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Happy Birthday Abdullah!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="intro">
+
+    <div class="intro-container">
+
+        <h1 class="intro-title">
+            Happy Birthday! 🎂
+        </h1>
+
+        <p class="subtitle">
+            Wishing you a day full of joy and surprises! 🎁✨
+        </p>
+
+        <form action="{{ url_for('celebrate') }}" method="POST">
+            <input type="text" name="name" placeholder="Enter the person's name" class="name-input" required>
+            <button type="submit" class="celebrate-btn">🎉 Celebrate Now! 🎉</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
