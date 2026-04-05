@@ -31,6 +31,3 @@ It demonstrates the integration of backend logic with frontend creativity to bui
 - **Styling:** Custom CSS animations & glassmorphism design
 
 ---
-
-## 📁 Project Structure
-
