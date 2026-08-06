@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Day</title>
+    <!-- Modern Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+</head>
+<body class="celebrate">
+
+    <!-- Soft Mesh Gradient Background -->
+    <div class="mesh-bg"></div>
+    <div class="stars" id="stars"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" title="Switch Theme">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
+
+    <div class="content-wrapper">
+        
+        <!-- Audio Element -->
+        <audio id="bgMusic" loop>
+            <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-154.mp3" type="audio/mpeg">
+        </audio>
+
+        <button id="audioToggle" class="floating-btn" onclick="toggleAudio()" title="Play Music">
+            <i class="fa-solid fa-volume-xmark" id="audioIcon"></i>
+        </button>
+
+        <!-- Elegant Card -->
+        <div class="glass-card main-card reveal-anim" data-tilt data-tilt-max="3" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+            <header class="card-header transform-z-30">
+                <div class="sparkle-container-card" id="titleSparkles"></div>
+                <h1 class="title great-vibes-font">Happy Birthday, Abdullah</h1>
+                <div class="elegant-badge">✨ Celebrating You ✨</div>
+            </header>
+
+            <div class="card-body transform-z-20">
+                <div class="message-section full-width">
+                    <div class="custom-message">
+                        "Wishing you a day as beautiful and elegant as you are. May this year bring you endless joy, peace, and wonderful new memories."
+                    </div>
+                    
+                    <!-- Elegant Candle Section -->
+                    <div class="candle-section mt-20">
+                        <p class="candle-hint">Tap to make a wish...</p>
+                        <div class="minimal-candle" id="minimalCandle" onclick="blowMinimalCandle()">
+                            <div class="candle-body"></div>
+                            <div class="candle-flame" id="candleFlame"></div>
+                        </div>
+                        <div class="wish-granted" id="wishGranted">Wish Granted ✨</div>
+                    </div>
+
+                    <div class="action-buttons justify-center mt-20">
+                        <button class="btn-soft" onclick="launchBalloons()">Balloons</button>
+                        <button class="btn-soft" onclick="launchConfetti()">Confetti</button>
+                        <button class="btn-soft" onclick="magicSparkles()">Sparkles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flip Polaroids Section -->
+        <div class="glass-card reveal-anim delay-1" style="width: 100%; max-width: 900px;" data-tilt data-tilt-max="1">
+            <h2 class="great-vibes-font transform-z-30 title-soft" style="text-align: center;">Cherished Memories</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Tap a photo to reveal the memory</p>
+            
+            <div class="polaroid-grid transform-z-20">
+                <!-- Polaroid 1 -->
+                <div class="polaroid" onclick="this.classList.toggle('flipped')">
+                    <div class="polaroid-inner">
+                        <div class="polaroid-front">
+                            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400&q=80" alt="Memory">
+                        </div>
+                        <div class="polaroid-back">
+                            <p class="great-vibes-font">That wonderful summer day...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polaroid 2 -->
+                <div class="polaroid" onclick="this.classList.toggle('flipped')">
+                    <div class="polaroid-inner">
+                        <div class="polaroid-front">
+                            <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=400&q=80" alt="Memory">
+                        </div>
+                        <div class="polaroid-back">
+                            <p class="great-vibes-font">Unforgettable moments!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polaroid 3 -->
+                <div class="polaroid" onclick="this.classList.toggle('flipped')">
+                    <div class="polaroid-inner">
+                        <div class="polaroid-front">
+                            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&q=80" alt="Memory">
+                        </div>
+                        <div class="polaroid-back">
+                            <p class="great-vibes-font">Always smiling 😊</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="balloon-container"></div>
+        <div id="sparkle-container"></div>
+
+        <footer class="footer-elegant">
+            Crafted with elegance by Muhammad Abdullah Bhatti
+        </footer>
+
+    </div>
+
+    <script src="js/java.js"></script>
+</body>
+</html>
